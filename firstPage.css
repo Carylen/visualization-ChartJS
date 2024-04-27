@@ -8,3 +8,9 @@
     justify-content: space-around;
     align-items: center;
 }
+
+@media only screen and (min-width: 600px) {
+    .container-md{
+        display: block;
+    }
+}
