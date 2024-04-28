@@ -2,6 +2,12 @@
 const ctx = document.getElementById("myChart");
 const cfg = document.getElementById("myChart2");
 const cfg2 = document.getElementById("myChart3");
+const container = document.querySelector(".container");
+
+// container.innerHTML = '<div class="myChart"><canvas id="myChart"></canvas></div><div class="myChart"><canvas id="myChart2"></canvas></div><div class="myChart"><canvas id="myChart3"></canvas></div>'
+
+// container.appendChild([ctx, cfg, cfg2])
+        
 const data = [{x: 'Jan', net: 100, cogs: 50, gm: 50}, {x: 'Feb', net: 120, cogs: 55, gm: 75}, {x: 'Feb', net: 120, cogs: 55, gm: 75}];
 // chart.canvas.
 //   new Chart(ctx, {

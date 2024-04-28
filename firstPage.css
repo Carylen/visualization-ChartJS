@@ -1,6 +1,7 @@
 .myChart {
     max-width: 600px;
     max-height: 400px;
+    margin: 20% 0;
 }
 
 .container-md{
@@ -9,8 +10,9 @@
     align-items: center;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 600px) {
     .container-md{
         display: block;
+        margin: 10%;
     }
 }
