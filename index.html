@@ -10,13 +10,13 @@
     <h1>The Heartbreak Percentage of Pras</h1>
     <div class="container-md">
       <div class="card">
-        <h1>Bar Chart</h1>
+        <h1 id="title"></h1>
         <div class="myChart">
           <canvas id="myChart"></canvas>
         </div>
       </div>
 
-      <div class="card">
+      <!-- <div class="card">
         <h1>Line Chart</h1>
         <div class="myChart">
           <canvas id="myChart2"></canvas>
@@ -28,7 +28,14 @@
         <div class="myChart">
           <canvas id="myChart3"></canvas>
         </div>
-      </div>
+      </div> -->
+
+      <!-- <button id="btnChange">Click Me to See what will happen</button> -->
+      <select name="dropdown" id="dropdown">
+        <option value="bar">Bar Chart.js</option>
+        <option value="line">Line Chart.js</option>
+        <option value="doughnut">Doughnut Chart.js</option>
+      </select>
       
     </div>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

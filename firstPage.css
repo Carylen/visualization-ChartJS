@@ -3,6 +3,7 @@
     /* border: 1px solid black; */
     font-family: JetBrains Mono;
     text-align: center;
+    /* background-color: darkgreen; */
 }
 
 .myChart {
@@ -32,7 +33,7 @@
     .card {
         border-radius: 20px;
         padding: 5%;
-        background-color: antiquewhite;
+        background-color: rgba(33, 165, 165, 0.375);
         transition: 400ms ease-in-out;
     }
 

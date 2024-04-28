@@ -1,115 +1,42 @@
-const ctx = document.getElementById("myChart");
-const cfg = document.getElementById("myChart2");
-const cfg2 = document.getElementById("myChart3");
+const cfg = document.getElementById("myChart");
+const dropdown = document.getElementById("dropdown");
 const container = document.querySelector(".container");
+const title = document.getElementById("title")
+import {Chart} from 'chart.js';
 
-// container.innerHTML = '<div class="myChart"><canvas id="myChart"></canvas></div><div class="myChart"><canvas id="myChart2"></canvas></div><div class="myChart"><canvas id="myChart3"></canvas></div>'
+title.textContent = dropdown.value + " Chart"
 
-// container.appendChild([ctx, cfg, cfg2])
 
 const data = [
   { x: "Jan", Keisya: 100, Zahra: 10, Farahe: 20 },
   { x: "Feb", Keisya: 60, Zahra: 155, Farahe: 15 },
   { x: "Mar", Keisya: 30, Zahra: 195, Farahe: 15 },
 ];
-// chart.canvas.
-//   new Chart(ctx, {
-//     type: "bar",
-//     data: {
-//       labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
-//       datasets: [
-//         {
-//           label: "# of Votes",
-//           data: [12, 19, 3, 5, 2, 3],
-//           borderWidth: 1,
-//         },
-//       ],
-//     },
-//     options: {
-//       scales: {
-//         y: {
-//           beginAtZero: true,
-//         },
-//       },
-//     },
-//   });
-new Chart(ctx, {
-  type: "bar",
-  data: {
-    labels: data.map(x => x.x),
-    hoverOffset: 4,
-    datasets: [
-      {
-        label: "Keisya",
-        data: data,
-        parsing: {
-          yAxisKey: "Keisya",
-        },
-      },
-      {
-        label: "Zahra",
-        data: data,
-        parsing: {
-          yAxisKey: "Zahra",
-        },
-      },
-      {
-        label: "Farahe",
-        data: data,
-        parsing: {
-          yAxisKey: "Farahe",
-        },
-      },
-    ],
-  },
+
+dropdown.addEventListener("change", () => {
+    // calling function for change 'TypeOfChart'
+    changeType(dropdown.value)
+    // calling function for change Title on Card, based on 'type of chart'
+    changeTitle(dropdown.value)
+  let con = dropdown.value;
+  console.log(con);
 });
 
-new Chart(cfg, {
-  type: "line",
-//   data: {
-//     labels: data.map(month => month.x),
-//     datasets: [
-//       {
-//         data: [10, 2, 0],
-//       },
-//     ],
-//   },
-    data: {
-        labels: data.map((month) => month.x),
-        datasets: [
-            {
-            label: 'Keisya',
-            data: data,
-                parsing: {
-                    yAxisKey: 'Keisya'
-                },
-            },
-            {
-                label: 'Zahra',
-                data: data,
-                    parsing: {
-                        yAxisKey: 'Zahra'
-                    },
-            },
-            {
-                label: 'Farahe',
-                data: data, 
-                    parsing: {
-                        yAxisKey: 'Farahe'
-                    }
-            },
-        ]
-    },
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true,
-      },
-    },
-  },
-});
+const changeTitle = (value) => {
+    title.textContent = value + " Chart"
+}
 
-new Chart(cfg2, {
+const changeType = (value) => {
+  if (chart1.config.type != value) {
+    const type = `${value}`;
+    chart1.config.type = type;
+    chart1.update();
+    chart1.resize()
+  }
+//   console.log(chart1.config.type);
+};
+
+const chart1 = new Chart(cfg, {
   type: "doughnut",
   data: {
     labels: data.map((month) => month.x),
@@ -129,5 +56,9 @@ new Chart(cfg2, {
     ],
   },
 });
+
+// window.addEventListener("afterprint", () => {
+//   chart1.resize();
+// });
 
 // let cfg = chart1
