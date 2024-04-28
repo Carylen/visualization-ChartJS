@@ -2,7 +2,7 @@ const cfg = document.getElementById("myChart");
 const dropdown = document.getElementById("dropdown");
 const container = document.querySelector(".container");
 const title = document.getElementById("title")
-import {Chart} from 'chart.js';
+// import {Chart} from 'chart.js'
 
 title.textContent = dropdown.value + " Chart"
 
