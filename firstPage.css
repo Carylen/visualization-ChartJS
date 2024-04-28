@@ -1,3 +1,10 @@
+*{
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    font-family: JetBrains Mono;
+    text-align: center;
+}
+
 .myChart {
     max-width: 600px;
     max-height: 400px;
@@ -6,13 +13,30 @@
 
 .container-md{
     display: flex;
+    flex-direction: row;
+    grid-template-columns: repeat(4, auto);
+    background-color: wheat;
     justify-content: space-around;
     align-items: center;
 }
 
 @media only screen and (max-width: 600px) {
     .container-md{
-        display: block;
-        margin: 10%;
+        flex-direction: column;
+        /* column-gap: 50% ; */
+        grid-row-gap: 20px;
+        padding: 10%;
+        background-color: #ffff;
+    }
+
+    .card {
+        border-radius: 20px;
+        padding: 5%;
+        background-color: antiquewhite;
+        transition: 400ms ease-in-out;
+    }
+
+    .card:hover{
+        transform: scale(1.1);
     }
 }
